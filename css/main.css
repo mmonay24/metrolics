@@ -8,11 +8,12 @@
  */
 
 /* ==========================================================================
-   Base styles: opinionated defaults
+   BASE
    ========================================================================== */
 
 html {
   color: #222;
+  font-family: 'Open Sans', Verdana, Geneva, Tahoma, sans-serif;
   font-size: 1em;
   line-height: 1.4;
 }
@@ -83,12 +84,124 @@ textarea {
   resize: vertical;
 }
 
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
+img {
+  width: 100%;
+}
+
+h1 {
+  color: #000;
+}
 
 /* ==========================================================================
-   Helper classes
+   LAYOUT
+   ========================================================================== */
+
+div,
+section, 
+footer, 
+header {
+  border: 1px solid #ccc;
+}
+
+.column {
+  background-color: rgb(255, 226, 244);
+  margin: 1rem;
+
+}
+
+.heading {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
+
+
+/*Smallonly*/
+
+@media screen and (max-width:39.9375em) {
+
+  .s-extra-element {
+    display: none;
+  }
+
+}
+
+/*Mediumandup*/
+
+@media screen and (min-width:40em) {
+
+  .row {
+    display: grid;
+    width: 85vw;
+    max-width: 70rem;
+    margin: 0 auto;
+  }
+
+  .m-col-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+  .m-col-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .m-col-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .m-col-5 {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .span-full {
+    grid-column-start: 1;
+    grid-column-end: -1;
+  }
+
+}
+
+/*Mediumonly*/
+
+@media screen and (min-width:40em) and (max-width:63.9375em) {}
+
+/*Largeandup*/
+
+@media screen and (min-width:64em) {
+
+  .l-col-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+  .l-col-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .l-col-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .l-col-5 {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .l-col-6 {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .l-extra-element {
+    display: none;
+  }
+
+}
+
+/*Largeonly*/
+
+@media screen and (min-width:64em) and (max-width:74.9375em) {}
+
+
+/* ==========================================================================
+   MODULES
+   ========================================================================== */
+
+
+
+
+/* ==========================================================================
+   THEME
    ========================================================================== */
 
 /*
