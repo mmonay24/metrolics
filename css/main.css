@@ -92,30 +92,77 @@ h1 {
   color: #000;
 }
 
+
+
+
 /* ==========================================================================
    LAYOUT
    ========================================================================== */
 
-div,
+/* div,
 section, 
 footer, 
 header {
   border: 1px solid #ccc;
-}
+} */
 
 .column {
-  background-color: rgb(255, 226, 244);
+  /* background-color: rgb(255, 226, 244); */
   margin: 1rem;
 
 }
 
 .heading {
   text-align: center;
+  font-weight: normal;
 }
 
 p {
   text-align: center;
+  color: grey;
 }
+
+.flex {
+  display:flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.flex > div {
+  width: auto;
+  height: 100%;
+}
+
+.flex-2 {
+  display:flex;
+  /* flex-wrap: wrap; */
+  flex-direction: row;
+  flex-grow: 1;
+  margin: 0rem;
+}
+
+.flex-2 > div {
+  width: 2rem;
+  height: 2rem;
+}
+
+.colourbar {
+  margin-bottom: 0rem;
+}
+
+.bar {
+  width: 30rem;
+  
+}
+
+
+
+
+.about-text {
+  background-color: cornflowerblue;
+}
+
 
 
 /*Smallonly*/
@@ -125,6 +172,53 @@ p {
   .s-extra-element {
     display: none;
   }
+
+  .s-1-2 {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+  .s-1-2 > div {
+    margin: 0%;
+  }
+  .s-1-2 > .column > .heading, p {
+    text-align: left;
+  }
+
+
+  .s-1-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .s-1-1 > div {
+    margin: 0%;
+  }
+  .s-1-1 > .column > .heading, p {
+    text-align: left;
+  }
+
+  .s-1-4 {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+  }
+
+  .flex-2 {
+    display:flex;
+    flex-direction: row;
+    flex-grow: 1;
+    justify-content: center;
+
+  }
+  
+  .flex-2 > div {
+    width: 4rem;
+    height: 4rem;
+  }
+  
+  .span-full {
+    grid-column-start: 1;
+    grid-column-end: -1;
+  }
+
 
 }
 
@@ -143,6 +237,7 @@ p {
     grid-template-columns: 1fr 1fr;
   }
   .m-col-3 {
+    display:grid;
     grid-template-columns: repeat(3, 1fr);
   }
   .m-col-4 {
@@ -151,16 +246,40 @@ p {
   .m-col-5 {
     grid-template-columns: repeat(5, 1fr);
   }
+  .m-1-2 {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .m-3-1 {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+  }
+
   .span-full {
     grid-column-start: 1;
     grid-column-end: -1;
   }
 
+
 }
 
 /*Mediumonly*/
 
-@media screen and (min-width:40em) and (max-width:63.9375em) {}
+@media screen and (min-width:40em) and (max-width:63.9375em) {
+
+  .m-1-3 {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+  }
+  .m-1-3 > div {
+    margin: 0%;
+  }
+  .m-1-3 > .column > .heading, p {
+    text-align: left;
+  }
+
+
+}
 
 /*Largeandup*/
 
@@ -180,6 +299,14 @@ p {
   }
   .l-col-6 {
     grid-template-columns: repeat(6, 1fr);
+  }
+  
+  .l-1-5 {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+  }
+  .l-1-5 > div {
+    margin: 0%;
   }
 
   .l-extra-element {
@@ -203,6 +330,86 @@ p {
 /* ==========================================================================
    THEME
    ========================================================================== */
+
+   .first-heading {
+     text-align: left;
+   }
+
+  .page--slider {
+    background-color: rgb(221, 221, 221);
+  }
+
+  .page--about > .row > .column > .about-text> .heading, .about-p {
+    text-align: left;
+    margin-left: 1rem;
+    color: white;
+  }
+
+  .page--about > .row > .column > .about-text> .heading {
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+  }
+
+
+  .page--info > .row > .column > .info-h, .info-p {
+    text-align: left;
+    margin-left: 1rem;
+  }
+
+  .info-p, .info-h{
+    padding: 1rem;
+    border: 1px solid rgb(236, 223, 223);
+  }
+  
+  .page--footer {
+    background-color: rgb(24, 43, 56);
+  }
+
+
+
+  .footer-img > img{
+    border-radius: 20rem;
+  }
+
+  .footer-tweet-img {
+    width:3rem;
+    margin-left: 0rem;
+    border-radius: 20rem;
+  }
+
+  .footer-text{
+    margin: 0rem 1rem;
+    text-align: left;
+    color: white;
+  }
+
+  .foot-heading {
+    text-align: left;
+    color: white;
+  }
+  .footer-heading{
+    text-align: left;
+    font-weight: bolder;
+    color: white;
+  }
+
+  .footer-p{
+    text-align: left;
+    color: white;
+  }
+
+  .email {
+    border: none;
+    background-color: rgb(255, 114, 138);
+  }
+  
+  .submit {
+     border:none;
+     background-color: rgb(255, 229, 81);
+  }
+  
+  
+
 
 /*
  * Hide visually and from screen readers
